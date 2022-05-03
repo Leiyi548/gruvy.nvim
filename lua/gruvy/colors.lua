@@ -5,6 +5,8 @@ local gruvy = {
 	yellow = "#f8fe7a",
 	purple = "#b294bb",
 	grey = "#4e545c",
+	comment_grey = "#b0b1b0",
+	method_purple = "#B180D7",
 	deep_purple = "#5e0088",
 	strorageclass_popule = "#aa92cd",
 	cambridge_blue = "#81a2be",
@@ -19,6 +21,13 @@ local gruvy = {
 	special_purple = "#aa92cd",
 	underline_deepblue = "#80a0ff",
 	error_red = "#f70067",
+	float_bg = "#282c34",
+	float_border_fg = "#3e4451",
+	float_fg = "#fafafa",
+	colorcolumn = "#373c47",
+	endofbuffer = "#969896",
+	-- ts_keyword = "#81a2be",
+	ts_keyword = "#f96859",
 
 	-- nord color
 	--16 colors
@@ -41,6 +50,7 @@ local gruvy = {
 	nord13_gui = "#EBCB8B", -- nord13 in palette
 	nord14_gui = "#A3BE8C", -- nord14 in palette
 	nord15_gui = "#B48EAD", -- nord15 in palette
+	nord16_gui = "#dcdcaa",
 }
 
 -- Enable contrast sidebars, floating windows and popup menus

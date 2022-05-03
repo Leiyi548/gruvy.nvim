@@ -1,5 +1,5 @@
 local util = {}
-local gruvy = require("nord.theme")
+local gruvy = require("gruvy.theme")
 
 -- Go trough the table and highlight the group with the color values
 util.highlight = function(group, color)

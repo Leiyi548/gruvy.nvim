@@ -48,25 +48,13 @@ theme.loadSyntax = function()
 		markdownH3Delimiter = { fg = gruvy.specialChar_orange },
 	}
 
-	-- Italic comments
-	if vim.g.nord_italic == false then
-		syntax.Comment = { fg = gruvy.nord3_gui_bright } -- normal comments
-		syntax.Conditional = { fg = gruvy.nord9_gui } -- normal if, then, else, endif, switch, etc.
-		syntax.Function = { fg = gruvy.nord8_gui } -- normal function names
-		syntax.Identifier = { fg = gruvy.nord9_gui } -- any variable name
-		syntax.Keyword = { fg = gruvy.nord9_gui } -- normal for, do, while, etc.
-		syntax.Repeat = { fg = gruvy.nord9_gui } -- normal any other keyword
-		syntax.String = { fg = gruvy.nord14_gui } -- any string
-	else
-		syntax.Comment = { fg = gruvy.nord3_gui_bright, bg = gruvy.none, style = "italic" } -- italic comments
-		syntax.Conditional = { fg = gruvy.nord9_gui, bg = gruvy.none, style = "italic" } -- italic if, then, else, endif, switch, etc.
-		syntax.Function = { fg = gruvy.nord8_gui, bg = gruvy.none, style = "italic" } -- italic funtion names
-		syntax.Identifier = { fg = gruvy.nord9_gui, bg = gruvy.none, style = "italic" } -- any variable name
-		syntax.Keyword = { fg = gruvy.nord9_gui, bg = gruvy.none, style = "italic" } -- italic for, do, while, etc.
-		syntax.Repeat = { fg = gruvy.nord9_gui, bg = gruvy.none, style = "italic" } -- italic any other keyword
-		syntax.String = { fg = gruvy.nord14_gui, bg = gruvy.none, style = "italic" } -- any string
-	end
-
+	syntax.Comment = { fg = gruvy.nord3_gui_bright, style = "italic" } -- normal comments
+	syntax.Conditional = { fg = gruvy.keyword_orange } -- normal if, then, else, endif, switch, etc.
+	syntax.Function = { fg = gruvy.function_yellow } -- normal function names
+	syntax.Identifier = { fg = gruvy.keyword_orange } -- any variable name
+	syntax.Keyword = { fg = gruvy.purple } -- normal for, do, while, etc.
+	syntax.Repeat = { fg = gruvy.keyword_orange } -- normal any other keyword
+	syntax.String = { fg = gruvy.string_green } -- any string
 	return syntax
 end
 
@@ -74,9 +62,9 @@ theme.loadEditor = function()
 	-- Editor highlight groups
 
 	local editor = {
-		NormalFloat = { fg = gruvy.nord4_gui, bg = gruvy.float }, -- normal text and background color
-		FloatBorder = { fg = gruvy.nord4_gui, bg = gruvy.float }, -- normal text and background color
-		ColorColumn = { fg = gruvy.none, bg = gruvy.nord1_gui }, --  used for the columns set with 'colorcolumn'
+		NormalFloat = { fg = gruvy.float_fg, bg = gruvy.float_bg }, -- normal text and background color
+		FloatBorder = { fg = gruvy.float_border_fg, bg = gruvy.float_bg }, -- normal text and background color
+		ColorColumn = { fg = gruvy.none, bg = gruvy.colorcolumn }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = gruvy.nord1_gui }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "reverse" }, -- the character under the cursor
 		CursorIM = { fg = gruvy.nord5_gui, bg = gruvy.none, style = "reverse" }, -- like Cursor, but used when in IME mode
@@ -85,14 +73,14 @@ theme.loadEditor = function()
 		DiffChange = { fg = gruvy.nord13_gui, bg = gruvy.none, style = "reverse" }, --  diff mode: Changed line
 		DiffDelete = { fg = gruvy.nord11_gui, bg = gruvy.none, style = "reverse" }, -- diff mode: Deleted line
 		DiffText = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "reverse" }, -- diff mode: Changed text within a changed line
-		EndOfBuffer = { fg = gruvy.nord1_gui },
-		ErrorMsg = { fg = gruvy.none },
+		EndOfBuffer = { fg = gruvy.endofbuffer },
+		ErrorMsg = { fg = "white", bg = "red" },
 		Folded = { fg = gruvy.nord3_gui_bright, bg = gruvy.none, style = "italic" },
 		FoldColumn = { fg = gruvy.nord7_gui },
 		IncSearch = { fg = gruvy.nord6_gui, bg = gruvy.nord10_gui },
-		LineNr = { fg = gruvy.nord3_gui_bright },
-		CursorLineNr = { fg = gruvy.nord4_gui },
-		MatchParen = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "bold" },
+		LineNr = { fg = "#969896", bg = "#282a2e" }, -- line number
+		CursorLineNr = { fg = "yellow", style = "bold" },
+		MatchParen = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "bold" }, -- 突出显示的括号
 		ModeMsg = { fg = gruvy.nord4_gui },
 		MoreMsg = { fg = gruvy.nord4_gui },
 		NonText = { fg = gruvy.nord1_gui },
@@ -101,9 +89,9 @@ theme.loadEditor = function()
 		PmenuSbar = { fg = gruvy.nord4_gui, bg = gruvy.nord2_gui },
 		PmenuThumb = { fg = gruvy.nord4_gui, bg = gruvy.nord4_gui },
 		Question = { fg = gruvy.nord14_gui },
-		QuickFixLine = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "reverse" },
+		QuickFixLine = { fg = "yellow", bg = gruvy.none, style = "reverse" }, -- highlight quickfix line
 		qfLineNr = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "reverse" },
-		Search = { fg = gruvy.nord10_gui, bg = gruvy.nord6_gui, style = "reverse" },
+		Search = { fg = "#282a2e", bg = "#f8fe7a", style = "none" },
 		SpecialKey = { fg = gruvy.nord9_gui },
 		SpellBad = { fg = gruvy.nord11_gui, bg = gruvy.none, style = "italic,undercurl" },
 		SpellCap = { fg = gruvy.nord7_gui, bg = gruvy.none, style = "italic,undercurl" },
@@ -113,13 +101,13 @@ theme.loadEditor = function()
 		StatusLineNC = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui },
 		StatusLineTerm = { fg = gruvy.nord4_gui, bg = gruvy.nord2_gui },
 		StatusLineTermNC = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui },
-		TabLineFill = { fg = gruvy.nord4_gui, bg = gruvy.none },
-		TablineSel = { fg = gruvy.nord1_gui, bg = gruvy.nord9_gui },
-		Tabline = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui },
-		Title = { fg = gruvy.nord14_gui, bg = gruvy.none, style = "bold" },
-		Visual = { fg = gruvy.none, bg = gruvy.nord2_gui },
+		TabLineFill = { fg = "#eddbb2", bg = "#282a2e" },
+		TablineSel = { fg = "#ffffff", bg = "#282a2e" },
+		Tabline = { fg = "#5f898ad", bg = "#282a2e" },
+		Title = { fg = "megenta", bg = gruvy.none, style = "bold" },
+		Visual = { fg = gruvy.none, bg = "#38556d" },
 		VisualNOS = { fg = gruvy.none, bg = gruvy.nord2_gui },
-		WarningMsg = { fg = gruvy.nord15_gui },
+		WarningMsg = { fg = gruvy.nord16_gui },
 		WildMenu = { fg = gruvy.nord12_gui, bg = gruvy.none, style = "bold" },
 		CursorColumn = { fg = gruvy.none, bg = gruvy.cursorlinefg },
 		CursorLine = { fg = gruvy.none, bg = gruvy.cursorlinefg },
@@ -130,11 +118,11 @@ theme.loadEditor = function()
 		ReplacelMode = { fg = gruvy.nord11_gui, bg = gruvy.none, style = "reverse" },
 		VisualMode = { fg = gruvy.nord9_gui, bg = gruvy.none, style = "reverse" },
 		CommandMode = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "reverse" },
-		Warnings = { fg = gruvy.nord15_gui },
+		Warnings = { fg = gruvy.nord16_gui },
 
 		healthError = { fg = gruvy.nord11_gui },
 		healthSuccess = { fg = gruvy.nord14_gui },
-		healthWarning = { fg = gruvy.nord15_gui },
+		healthWarning = { fg = gruvy.nord16_gui },
 
 		-- dashboard
 		DashboardShortCut = { fg = gruvy.nord7_gui },
@@ -144,26 +132,15 @@ theme.loadEditor = function()
 
 		-- BufferLine
 		BufferLineIndicatorSelected = { fg = gruvy.nord0_gui },
-		BufferLineFill = { bg = gruvy.nord0_gui },
+		BufferLineFill = { bg = gruvy.float_bg },
 	}
 
 	-- Options:
 
 	--Set transparent background
-	if vim.g.nord_disable_background then
-		editor.Normal = { fg = gruvy.nord4_gui, bg = gruvy.none } -- normal text and background color
-		editor.SignColumn = { fg = gruvy.nord4_gui, bg = gruvy.none }
-	else
-		editor.Normal = { fg = gruvy.nord4_gui, bg = gruvy.nord0_gui } -- normal text and background color
-		editor.SignColumn = { fg = gruvy.nord4_gui, bg = gruvy.nord0_gui }
-	end
-
-	-- Remove window split borders
-	if vim.g.nord_borders then
-		editor.VertSplit = { fg = gruvy.nord2_gui }
-	else
-		editor.VertSplit = { fg = gruvy.nord0_gui }
-	end
+	editor.Normal = { fg = "#e0e0e0", bg = "#282c34" } -- normal text and background color
+	editor.SignColumn = { fg = "#969896", bg = "#282a2e" }
+	editor.VertSplit = { fg = gruvy.nord2_gui }
 
 	return editor
 end
@@ -198,27 +175,27 @@ theme.loadTreeSitter = function()
 		TSNumber = { fg = gruvy.keyword_orange }, -- For all number
 
 		TSAttribute = { fg = gruvy.yellow }, -- (unstable) TODO: docs
-		TSVariable = { fg = gruvy.specialChar_orange, style = "none" }, -- Any variable name that does not have another highlight.
-		TSVariableBuiltin = { fg = gruvy.nord4_gui, style = "bold" },
-		TSBoolean = { fg = gruvy.nord9_gui, style = "bold" }, -- For booleans.
-		TSConstBuiltin = { fg = gruvy.nord7_gui, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
+		TSVariable = { fg = "#e0e0e0", style = "none" }, -- Any variable name that does not have another highlight.
+		TSVariableBuiltin = { fg = gruvy.yellow, style = "none" },
+		TSBoolean = { fg = "#de935f", style = "none" }, -- For booleans.
+		TSConstBuiltin = { fg = "#81a2be", style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
 		TSConstMacro = { fg = gruvy.nord7_gui, style = "bold" }, -- For constants that are defined by macros: `NULL` in C.
-		TSError = { fg = gruvy.nord11_gui }, -- For syntax/parser errors.
+		TSError = { fg = gruvy.red }, -- For syntax/parser errors.
 		TSException = { fg = gruvy.nord15_gui }, -- For exception related keywords.
 		TSFuncMacro = { fg = gruvy.nord7_gui }, -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
-		TSInclude = { fg = gruvy.nord9_gui }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
-		TSLabel = { fg = gruvy.nord15_gui }, -- For labels: `label:` in C and `:label:` in Lua.
-		TSOperator = { fg = gruvy.nord9_gui }, -- For any operator: `+`, but also `->` and `*` in C.
-		TSParameter = { fg = gruvy.nord10_gui }, -- For parameters of a function.
+		TSInclude = { fg = "#8abeb7" }, -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
+		TSLabel = { fg = "#f8fe7a" }, -- For labels: `label:` in C and `:label:` in Lua.
+		TSOperator = { fg = gruvy.operator_pink }, -- For any operator: `+`, but also `->` and `*` in C.
+		TSParameter = { fg = gruvy.keyword_orange }, -- For parameters of a function.
 		TSParameterReference = { fg = gruvy.nord10_gui }, -- For references to parameters of a function.
-		TSPunctDelimiter = { fg = gruvy.nord8_gui }, -- For delimiters ie: `.`
+		TSPunctDelimiter = { fg = gruvy.special_purple }, -- For delimiters ie: `.`
 		TSPunctBracket = { fg = gruvy.nord8_gui }, -- For brackets and parens.
 		TSPunctSpecial = { fg = gruvy.nord8_gui }, -- For special punctutation that does not fall in the catagories before.
-		TSSymbol = { fg = gruvy.nord15_gui }, -- For identifiers referring to symbols or atoms.
-		TSType = { fg = gruvy.nord9_gui }, -- For types.
-		TSTypeBuiltin = { fg = gruvy.nord9_gui }, -- For builtin types.
-		TSTag = { fg = gruvy.nord4_gui }, -- Tags like html tag names.
-		TSTagDelimiter = { fg = gruvy.nord15_gui }, -- Tag delimiter like `<` `>` `/`
+		TSSymbol = { fg = gruvy.keyword_orange }, -- For identifiers referring to symbols or atoms.
+		TSType = { fg = gruvy.yellow }, -- For types.
+		TSTypeBuiltin = { fg = gruvy.yellow }, -- For builtin types.
+		TSTag = { fg = gruvy.yellow }, -- Tags like html tag names.
+		TSTagDelimiter = { fg = gruvy.purple }, -- Tag delimiter like `<` `>` `/`
 		TSText = { fg = gruvy.nord4_gui }, -- For strings considenord11_gui text in a markup language.
 		TSTextReference = { fg = gruvy.nord15_gui }, -- FIXME
 		TSEmphasis = { fg = gruvy.nord10_gui }, -- For text to be represented with emphasis.
@@ -227,57 +204,35 @@ theme.loadTreeSitter = function()
 		TSLiteral = { fg = gruvy.nord4_gui }, -- Literal text.
 		TSURI = { fg = gruvy.nord14_gui }, -- Any URI like a link or email.
 		TSAnnotation = { fg = gruvy.nord11_gui }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+
+		-- go
+		goImport = { fg = "#8abeb7", style = "italic" },
+		goTSMethod = { fg = "#f8fe7a", style = "bold" },
+		goTSParameter = { fg = "#cc6666", style = "bold" },
 	}
 
-	if vim.g.nord_italic == false then
-		-- Comments
-		treesitter.TSComment = { fg = gruvy.nord3_gui_bright }
-		-- Conditionals
-		treesitter.TSConditional = { fg = gruvy.nord9_gui } -- For keywords related to conditionnals.
-		-- Function names
-		treesitter.TSFunction = { fg = gruvy.nord8_gui } -- For fuction (calls and definitions).
-		treesitter.TSMethod = { fg = gruvy.nord7_gui } -- For method calls and definitions.
-		treesitter.TSFuncBuiltin = { fg = gruvy.nord8_gui }
-		-- Namespaces and property accessors
-		treesitter.TSNamespace = { fg = gruvy.nord4_gui } -- For identifiers referring to modules and namespaces.
-		treesitter.TSField = { fg = gruvy.nord4_gui } -- For fields in literals
-		treesitter.TSProperty = { fg = gruvy.nord10_gui } -- Same as `TSField`
-		-- Language keywords
-		treesitter.TSKeyword = { fg = gruvy.nord9_gui } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = gruvy.nord8_gui }
-		treesitter.TSKeywordReturn = { fg = gruvy.nord8_gui }
-		treesitter.TSKeywordOperator = { fg = gruvy.nord8_gui }
-		treesitter.TSRepeat = { fg = gruvy.nord9_gui } -- For keywords related to loops.
-		-- Strings
-		treesitter.TSString = { fg = gruvy.nord14_gui } -- For strings.
-		treesitter.TSStringRegex = { fg = gruvy.nord7_gui } -- For regexes.
-		treesitter.TSStringEscape = { fg = gruvy.nord15_gui } -- For escape characters within a string.
-		treesitter.TSCharacter = { fg = gruvy.nord14_gui } -- For characters.
-	else
-		-- Comments
-		treesitter.TSComment = { fg = gruvy.nord3_gui_bright, style = "italic" }
-		-- Conditionals
-		treesitter.TSConditional = { fg = gruvy.nord9_gui, style = "italic" } -- For keywords related to conditionnals.
-		-- Function names
-		treesitter.TSFunction = { fg = gruvy.nord8_gui, style = "italic" } -- For fuction (calls and definitions).
-		treesitter.TSMethod = { fg = gruvy.nord7_gui, style = "italic" } -- For method calls and definitions.
-		treesitter.TSFuncBuiltin = { fg = gruvy.nord8_gui, style = "italic" }
-		-- Namespaces and property accessors
-		treesitter.TSNamespace = { fg = gruvy.nord4_gui, style = "italic" } -- For identifiers referring to modules and namespaces.
-		treesitter.TSField = { fg = gruvy.nord4_gui, style = "italic" } -- For fields.
-		treesitter.TSProperty = { fg = gruvy.nord10_gui, style = "italic" } -- Same as `TSField`, but when accessing, not declaring.
-		-- Language keywords
-		treesitter.TSKeyword = { fg = gruvy.nord9_gui, style = "italic" } -- For keywords that don't fall in other categories.
-		treesitter.TSKeywordFunction = { fg = gruvy.nord8_gui, style = "italic" }
-		treesitter.TSKeywordReturn = { fg = gruvy.nord8_gui, style = "italic" }
-		treesitter.TSKeywordOperator = { fg = gruvy.nord8_gui, style = "italic" }
-		treesitter.TSRepeat = { fg = gruvy.nord9_gui, style = "italic" } -- For keywords related to loops.
-		-- Strings
-		treesitter.TSString = { fg = gruvy.nord14_gui, style = "italic" } -- For strings.
-		treesitter.TSStringRegex = { fg = gruvy.nord7_gui, style = "italic" } -- For regexes.
-		treesitter.TSStringEscape = { fg = gruvy.nord15_gui, style = "italic" } -- For escape characters within a string.
-		treesitter.TSCharacter = { fg = gruvy.nord14_gui, style = "italic" } -- For characters.
-	end
+	treesitter.TSComment = { fg = gruvy.comment_grey }
+	-- Conditionals
+	treesitter.TSConditional = { fg = gruvy.keyword_orange } -- For keywords related to conditionnals.
+	-- Function names
+	treesitter.TSFunction = { fg = gruvy.yellow } -- For fuction (calls and definitions).
+	treesitter.TSMethod = { fg = gruvy.method_purple } -- For method calls and definitions.
+	treesitter.TSFuncBuiltin = { fg = gruvy.special_purple }
+	-- Namespaces and property accessors
+	treesitter.TSNamespace = { fg = gruvy.include_cyan } -- For identifiers referring to modules and namespaces.
+	treesitter.TSField = { fg = gruvy.keyword_orange } -- For fields in literals
+	treesitter.TSProperty = { fg = gruvy.keyword_orange } -- Same as `TSField`
+	-- Language keywords
+	treesitter.TSKeyword = { fg = gruvy.purple } -- For keywords that don't fall in other categories.
+	treesitter.TSKeywordFunction = { fg = gruvy.purple }
+	treesitter.TSKeywordReturn = { fg = gruvy.purple }
+	treesitter.TSKeywordOperator = { fg = gruvy.operator_pink }
+	treesitter.TSRepeat = { fg = gruvy.keyword_orange } -- For keywords related to loops.
+	-- Strings
+	treesitter.TSString = { fg = gruvy.nord14_gui } -- For strings.
+	treesitter.TSStringRegex = { fg = gruvy.nord7_gui } -- For regexes.
+	treesitter.TSStringEscape = { fg = gruvy.nord15_gui } -- For escape characters within a string.
+	treesitter.TSCharacter = { fg = gruvy.nord14_gui } -- For characters.
 
 	return treesitter
 end
@@ -291,11 +246,11 @@ theme.loadLSP = function()
 		LspDiagnosticsFloatingError = { fg = gruvy.nord11_gui }, -- used for "Error" diagnostic messages in the diagnostics float
 		LspDiagnosticsVirtualTextError = { fg = gruvy.nord11_gui }, -- Virtual text "Error"
 		LspDiagnosticsUnderlineError = { style = "undercurl", sp = gruvy.nord11_gui }, -- used to underline "Error" diagnostics.
-		LspDiagnosticsDefaultWarning = { fg = gruvy.nord15_gui }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsSignWarning = { fg = gruvy.nord15_gui }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsFloatingWarning = { fg = gruvy.nord15_gui }, -- used for "Warning" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextWarning = { fg = gruvy.nord15_gui }, -- Virtual text "Warning"
-		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = gruvy.nord15_gui }, -- used to underline "Warning" diagnostics.
+		LspDiagnosticsDefaultWarning = { fg = gruvy.nord16_gui }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsSignWarning = { fg = gruvy.nord16_gui }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsFloatingWarning = { fg = gruvy.nord16_gui }, -- used for "Warning" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextWarning = { fg = gruvy.nord16_gui }, -- Virtual text "Warning"
+		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = gruvy.nord16_gui }, -- used to underline "Warning" diagnostics.
 		LspDiagnosticsDefaultInformation = { fg = gruvy.nord10_gui }, -- used for "Information" diagnostic virtual text
 		LspDiagnosticsSignInformation = { fg = gruvy.nord10_gui }, -- used for "Information" diagnostic signs in sign column
 		LspDiagnosticsFloatingInformation = { fg = gruvy.nord10_gui }, -- used for "Information" diagnostic messages in the diagnostics float
@@ -381,12 +336,12 @@ theme.loadPlugins = function()
 		GitSignsDeleteLn = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 
 		-- Telescope
-		TelescopePromptBorder = { fg = gruvy.nord8_gui },
+		TelescopePromptBorder = { fg = gruvy.yellow },
 		TelescopeResultsBorder = { fg = gruvy.nord9_gui },
 		TelescopePreviewBorder = { fg = gruvy.nord14_gui },
 		TelescopeSelectionCaret = { fg = gruvy.nord9_gui },
 		TelescopeSelection = { fg = gruvy.nord9_gui },
-		TelescopeMatching = { fg = gruvy.nord8_gui },
+		TelescopeMatching = { fg = gruvy.purple },
 
 		-- NvimTree
 		NvimTreeRootFolder = { fg = gruvy.nord7_gui, style = "bold" },
@@ -399,8 +354,9 @@ theme.loadPlugins = function()
 		NvimTreeEmptyFolderName = { fg = gruvy.nord1_gui },
 		NvimTreeFolderIcon = { fg = gruvy.nord4_gui },
 		NvimTreeIndentMarker = { fg = gruvy.nord1_gui },
+		NvimTreeEndOfBuffer = { fg = "#282c34" },
 		LspDiagnosticsError = { fg = gruvy.nord11_gui },
-		LspDiagnosticsWarning = { fg = gruvy.nord15_gui },
+		LspDiagnosticsWarning = { fg = gruvy.nord16_gui },
 		LspDiagnosticsInformation = { fg = gruvy.nord10_gui },
 		LspDiagnosticsHint = { fg = gruvy.nord9_gui },
 
@@ -414,7 +370,7 @@ theme.loadPlugins = function()
 
 		-- LspSaga
 		DiagnosticError = { fg = gruvy.nord11_gui },
-		DiagnosticWarning = { fg = gruvy.nord15_gui },
+		DiagnosticWarning = { fg = gruvy.nord16_gui },
 		DiagnosticInformation = { fg = gruvy.nord10_gui },
 		DiagnosticHint = { fg = gruvy.nord9_gui },
 		DiagnosticTruncateLine = { fg = gruvy.nord4_gui },
@@ -439,16 +395,47 @@ theme.loadPlugins = function()
 		Sneak = { fg = gruvy.nord0_gui, bg = gruvy.nord4_gui },
 		SneakScope = { bg = gruvy.nord1_gui },
 
-		-- Cmp
-		CmpItemKind = { fg = gruvy.nord15_gui },
-		CmpItemAbbrMatch = { fg = gruvy.nord5_gui, style = "bold" },
-		CmpItemAbbrMatchFuzzy = { fg = gruvy.nord5_gui, style = "bold" },
-		CmpItemAbbr = { fg = gruvy.nord4_gui },
-		CmpItemMenu = { fg = gruvy.nord14_gui },
+		-- Cmp vscode style
+		CmpItemAbbrMatchFuzzy = { bg = "none", fg = "#0195F7", gui = "bold", sp = "none" }, -- CmpItemAbbrMatchFuzzy xxx gui=italic guifg=#969896 guibg=none guisp=none
+		CmpItemAbbrMatchDefault = { fg = "#0195F7" }, -- CmpItemAbbrMatchDefault xxx guifg=#b4b7b4
+		CmpItemAbbrMatch = { CmpItemAbbrMatchDefault }, -- CmpItemAbbrMatch xxx links to CmpItemAbbrMatchDefault
+		CmpItemAbbrMatchFuzzyDefault = { fg = "#b4b7b4" }, -- CmpItemAbbrMatchFuzzyDefault xxx guifg=#b4b7b4
+		CmpItemKindDefault = { fg = "#d484ff" }, -- CmpItemKindDefault xxx guifg=#ffa500
+		CmpItemMenuDefault = { fg = "#b4b7b4" }, -- CmpItemMenuDefault xxx guifg=#b4b7b4
+		CmpItemAbbr = { bg = "none", fg = "#b0b1b0", sp = "none" }, -- CmpItemAbbr    xxx guifg=#b0b1b0 guibg=none guisp=none
+		CmpItemAbbrDeprecated = { bg = "none", fg = "#d98c8c", sp = "none" }, -- CmpItemAbbrDeprecated xxx guifg=#d98c8c guibg=none guisp=none
+		CmpItemKind = { bg = "none", fg = "#aa92cd", sp = "none" }, -- CmpItemKind    xxx guifg=#aa92cd guibg=none guisp=none
+		CmpItemMenu = { bg = "none", fg = "#4e545c", sp = "none" }, -- CmpItemMenu    xxx guifg=#4e545c guibg=none guisp=none
+		CmpItemKindFunction = { fg = "#B180D7" },
+		CmpItemKindMethod = { fg = "#B180D7" },
+		CmpItemKindConstructor = { fg = "#E8AB53" },
+		CmpItemKindClass = { fg = "#E8AB53" },
+		CmpItemKindEnum = { fg = "#E8AB53" },
+		CmpItemKindEvent = { fg = "#B180D7" },
+		CmpItemKindInterface = { fg = "#0195F7" },
+		CmpItemKindStruct = { fg = "#75BEFF" },
+		CmpItemKindVariable = { fg = "#75BEFF" },
+		cmpitemkindfield = { fg = "#75BEFF" },
+		CmpItemKindProperty = { fg = "#75BEFF" },
+		CmpItemKindEnumMember = { fg = "#0195F7" },
+		CmpItemKindConstant = { fg = "#75BEFF" },
+
+		CmpItemKindKeyword = { fg = "#D4D4D4" },
+		CmpItemKindModule = { fg = "#D4D4D4" },
+		CmpItemKindValue = { fg = "#D4D4D4" },
+		CmpItemKindUnit = { fg = "#D4D4D4" },
+		CmpItemKindText = { fg = "#D4D4D4" },
+		CmpItemKindSnippet = { fg = "#D4D4D4" },
+		CmpItemKindFile = { fg = "#D4D4D4" },
+		CmpItemKindFolder = { fg = "#D4D4D4" },
+		CmpItemKindColor = { fg = "#D4D4D4" },
+		CmpItemKindReference = { fg = "#D4D4D4" },
+		CmpItemKindOperator = { fg = "#D4D4D4" },
+		CmpItemKindTypeParameter = { fg = "#D4D4D4" },
 
 		-- Indent Blankline
 		IndentBlanklineChar = { fg = gruvy.nord3_gui },
-		IndentBlanklineContextChar = { fg = gruvy.nord10_gui },
+		IndentBlanklineContextChar = { fg = gruvy.yellow },
 
 		-- Illuminate
 		illuminatedWord = { bg = gruvy.nord3_gui },
@@ -518,20 +505,6 @@ theme.loadPlugins = function()
 		StatusLineAccent = { fg = gruvy.nord0_gui, bg = gruvy.nord13_gui },
 	}
 	-- Options:
-
-	-- Disable nvim-tree background
-	if vim.g.nord_disable_background then
-		plugins.NvimTreeNormal = { fg = gruvy.nord4_gui, bg = gruvy.none }
-	else
-		plugins.NvimTreeNormal = { fg = gruvy.nord4_gui, bg = gruvy.sidebar }
-	end
-
-	if vim.g.nord_enable_sidebar_background then
-		plugins.NvimTreeNormal = { fg = gruvy.nord4_gui, bg = gruvy.sidebar }
-	else
-		plugins.NvimTreeNormal = { fg = gruvy.nord4_gui, bg = gruvy.none }
-	end
-
 	return plugins
 end
 
