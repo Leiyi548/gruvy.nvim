@@ -26,8 +26,8 @@ local gruvy = {
 	float_fg = "#fafafa",
 	colorcolumn = "#373c47",
 	endofbuffer = "#969896",
-	-- ts_keyword = "#81a2be",
-	ts_keyword = "#f96859",
+	ts_keyword = "#81a2be",
+	-- ts_keyword = "#f96859",
 
 	-- nord color
 	--16 colors

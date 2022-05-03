@@ -40,12 +40,16 @@ theme.loadSyntax = function()
 		htmlH3 = { fg = gruvy.cambridge_blue, style = "bold" },
 		htmlH4 = { fg = gruvy.cambridge_blue, style = "bold" },
 		htmlH5 = { fg = gruvy.nord9_gui, style = "bold" },
-		markdownH1 = { fg = gruvy.deep_purple, style = "bold" },
-		markdownH2 = { fg = gruvy.deep_purple, style = "bold" },
-		markdownH3 = { fg = gruvy.deep_purple, style = "bold" },
-		markdownH1Delimiter = { fg = gruvy.specialChar_orange },
-		markdownH2Delimiter = { fg = gruvy.specialChar_orange },
-		markdownH3Delimiter = { fg = gruvy.specialChar_orange },
+		markdownH1 = { fg = gruvy.ts_keyword, style = "bold" },
+		markdownH2 = { fg = gruvy.ts_keyword, style = "bold" },
+		markdownH3 = { fg = gruvy.ts_keyword, style = "bold" },
+		markdownH4 = { fg = gruvy.ts_keyword, style = "bold" },
+		markdownH5 = { fg = gruvy.ts_keyword, style = "bold" },
+		markdownH1Delimiter = { fg = gruvy.ts_keyword },
+		markdownH2Delimiter = { fg = gruvy.ts_keyword },
+		markdownH3Delimiter = { fg = gruvy.ts_keyword },
+		markdownH4Delimiter = { fg = gruvy.ts_keyword },
+		markdownH5Delimiter = { fg = gruvy.ts_keyword },
 	}
 
 	syntax.Comment = { fg = gruvy.nord3_gui_bright, style = "italic" } -- normal comments
