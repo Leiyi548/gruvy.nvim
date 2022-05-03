@@ -77,9 +77,9 @@ theme.loadEditor = function()
 		ErrorMsg = { fg = "white", bg = "red" },
 		Folded = { fg = gruvy.nord3_gui_bright, bg = gruvy.none, style = "italic" },
 		FoldColumn = { fg = gruvy.nord7_gui },
-		IncSearch = { fg = gruvy.nord6_gui, bg = gruvy.nord10_gui },
+		IncSearch = { fg = gruvy.float_bg, bg = gruvy.yellow },
 		LineNr = { fg = "#969896", bg = "#282a2e" }, -- line number
-		CursorLineNr = { fg = "yellow", style = "bold" },
+		CursorLineNr = { fg = "yellow", style = "bold" }, -- current line numbmer
 		MatchParen = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "bold" }, -- 突出显示的括号
 		ModeMsg = { fg = gruvy.nord4_gui },
 		MoreMsg = { fg = gruvy.nord4_gui },
