@@ -338,6 +338,7 @@ theme.loadPlugins = function()
 		GitSignsDelete = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteNr = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 		GitSignsDeleteLn = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
+		GitSignsCurrentLineBlame = { fg = gruvy.endofbuffer },
 
 		-- Telescope
 		TelescopePromptBorder = { fg = gruvy.yellow },
