@@ -16,6 +16,7 @@ local gruvy = {
 	operator_pink = "#e6b3b3",
 	include_cyan = "#8abeb7",
 	specialChar_orange = "#a3685a",
+	special_purple = "#aa92cd",
 	underline_deepblue = "#80a0ff",
 	error_red = "#f70067",
 

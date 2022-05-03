@@ -191,14 +191,14 @@ theme.loadTreeSitter = function()
 	-- TreeSitter highlight groups
 
 	local treesitter = {
-		TSAnnotation = { fg = gruvy.nord12_gui }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
-		TSConstructor = { fg = gruvy.nord9_gui }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
-		TSConstant = { fg = gruvy.nord13_gui }, -- For constants
-		TSFloat = { fg = gruvy.nord15_gui }, -- For floats
-		TSNumber = { fg = gruvy.nord15_gui }, -- For all number
+		TSAnnotation = { fg = gruvy.yellow }, -- For C++/Dart attributes, annotations thatcan be attached to the code to denote some kind of meta information.
+		TSConstructor = { fg = gruvy.special_purple }, -- For constructor calls and definitions: `= { }` in Lua, and Java constructors.
+		TSConstant = { fg = gruvy.cambridge_blue }, -- For constants
+		TSFloat = { fg = gruvy.keyword_orange }, -- For floats
+		TSNumber = { fg = gruvy.keyword_orange }, -- For all number
 
-		TSAttribute = { fg = gruvy.nord15_gui }, -- (unstable) TODO: docs
-		TSVariable = { fg = gruvy.nord4_gui, style = "bold" }, -- Any variable name that does not have another highlight.
+		TSAttribute = { fg = gruvy.yellow }, -- (unstable) TODO: docs
+		TSVariable = { fg = gruvy.specialChar_orange, style = "none" }, -- Any variable name that does not have another highlight.
 		TSVariableBuiltin = { fg = gruvy.nord4_gui, style = "bold" },
 		TSBoolean = { fg = gruvy.nord9_gui, style = "bold" }, -- For booleans.
 		TSConstBuiltin = { fg = gruvy.nord7_gui, style = "bold" }, -- For constant that are built in the language: `nil` in Lua.
