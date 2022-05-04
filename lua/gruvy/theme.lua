@@ -4,7 +4,7 @@ local theme = {}
 theme.loadSyntax = function()
 	-- Syntax highlight groups
 	local syntax = {
-		Type = { fg = gruvy.purple }, -- int, long, char, etc.
+		Type = { fg = gruvy.purple, style = "italic" }, -- int, long, char, etc.
 		StorageClass = { fg = gruvy.purple }, -- static, register, volatile, etc.
 		Structure = { fg = gruvy.purple }, -- struct, union, enum, etc.
 		Constant = { fg = gruvy.keyword_orange }, -- any constant
@@ -196,8 +196,8 @@ theme.loadTreeSitter = function()
 		TSPunctBracket = { fg = gruvy.nord8_gui }, -- For brackets and parens.
 		TSPunctSpecial = { fg = gruvy.nord8_gui }, -- For special punctutation that does not fall in the catagories before.
 		TSSymbol = { fg = gruvy.keyword_orange }, -- For identifiers referring to symbols or atoms.
-		TSType = { fg = gruvy.yellow }, -- For types.
-		TSTypeBuiltin = { fg = gruvy.yellow }, -- For builtin types.
+		TSType = { fg = gruvy.purple }, -- For types.
+		TSTypeBuiltin = { fg = gruvy.purple }, -- For builtin types.
 		TSTag = { fg = gruvy.yellow }, -- Tags like html tag names.
 		TSTagDelimiter = { fg = gruvy.purple }, -- Tag delimiter like `<` `>` `/`
 		TSText = { fg = gruvy.nord4_gui }, -- For strings considenord11_gui text in a markup language.
@@ -220,8 +220,8 @@ theme.loadTreeSitter = function()
 	treesitter.TSConditional = { fg = gruvy.keyword_orange } -- For keywords related to conditionnals.
 	-- Function names
 	treesitter.TSFunction = { fg = gruvy.yellow } -- For fuction (calls and definitions).
-	treesitter.TSMethod = { fg = gruvy.method_purple } -- For method calls and definitions.
-	treesitter.TSFuncBuiltin = { fg = gruvy.special_purple }
+	treesitter.TSMethod = { fg = gruvy.yellow } -- For method calls and definitions.
+	treesitter.TSFuncBuiltin = { fg = gruvy.yellow }
 	-- Namespaces and property accessors
 	treesitter.TSNamespace = { fg = gruvy.include_cyan } -- For identifiers referring to modules and namespaces.
 	treesitter.TSField = { fg = gruvy.keyword_orange } -- For fields in literals
