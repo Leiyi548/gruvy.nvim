@@ -135,8 +135,11 @@ theme.loadEditor = function()
 		DashboardFooter = { fg = gruvy.nord14_gui, style = "italic" },
 
 		-- BufferLine
-		BufferLineIndicatorSelected = { fg = gruvy.nord0_gui },
+		BufferLineIndicatorSelected = { fg = gruvy.yellow, bg = "#2e3440" },
 		BufferLineFill = { bg = gruvy.float_bg },
+		BufferLineTab = { fg = gruvy.float_fg, bg = "#21252b" },
+		BufferLineBufferSelected = { fg = gruvy.white, bg = gruvy.nord0_gui, style = "bold,italic" }, -- current
+		BufferLineTabSelected = { fg = gruvy.float_fg, bg = "#1e2122" },
 	}
 
 	-- Options:
