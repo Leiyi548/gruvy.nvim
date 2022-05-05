@@ -146,7 +146,7 @@ theme.loadEditor = function()
 
 	--Set transparent background
 	editor.Normal = { fg = "#e0e0e0", bg = "#282c34" } -- normal text and background color
-	editor.SignColumn = { fg = "#969896", bg = "#282a2e" }
+	editor.SignColumn = { fg = "#969896", bg = "#282a2e" } -- left number area
 	editor.VertSplit = { fg = gruvy.nord2_gui }
 
 	return editor
@@ -248,31 +248,31 @@ theme.loadLSP = function()
 	-- Lsp highlight groups
 
 	local lsp = {
-		LspDiagnosticsDefaultError = { fg = gruvy.nord11_gui }, -- used for "Error" diagnostic virtual text
-		LspDiagnosticsSignError = { fg = gruvy.nord11_gui }, -- used for "Error" diagnostic signs in sign column
-		LspDiagnosticsFloatingError = { fg = gruvy.nord11_gui }, -- used for "Error" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextError = { fg = gruvy.nord11_gui }, -- Virtual text "Error"
-		LspDiagnosticsUnderlineError = { style = "undercurl", sp = gruvy.nord11_gui }, -- used to underline "Error" diagnostics.
-		LspDiagnosticsDefaultWarning = { fg = gruvy.nord16_gui }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsSignWarning = { fg = gruvy.nord16_gui }, -- used for "Warning" diagnostic signs in sign column
-		LspDiagnosticsFloatingWarning = { fg = gruvy.nord16_gui }, -- used for "Warning" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextWarning = { fg = gruvy.nord16_gui }, -- Virtual text "Warning"
-		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = gruvy.nord16_gui }, -- used to underline "Warning" diagnostics.
-		LspDiagnosticsDefaultInformation = { fg = gruvy.nord10_gui }, -- used for "Information" diagnostic virtual text
-		LspDiagnosticsSignInformation = { fg = gruvy.nord10_gui }, -- used for "Information" diagnostic signs in sign column
-		LspDiagnosticsFloatingInformation = { fg = gruvy.nord10_gui }, -- used for "Information" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextInformation = { fg = gruvy.nord10_gui }, -- Virtual text "Information"
-		LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = gruvy.nord10_gui }, -- used to underline "Information" diagnostics.
-		LspDiagnosticsDefaultHint = { fg = gruvy.nord9_gui }, -- used for "Hint" diagnostic virtual text
-		LspDiagnosticsSignHint = { fg = gruvy.nord9_gui }, -- used for "Hint" diagnostic signs in sign column
-		LspDiagnosticsFloatingHint = { fg = gruvy.nord9_gui }, -- used for "Hint" diagnostic messages in the diagnostics float
-		LspDiagnosticsVirtualTextHint = { fg = gruvy.nord9_gui }, -- Virtual text "Hint"
-		LspDiagnosticsUnderlineHint = { style = "undercurl", sp = gruvy.nord10_gui }, -- used to underline "Hint" diagnostics.
+		LspDiagnosticsDefaultError = { fg = gruvy.error }, -- used for "Error" diagnostic virtual text
+		LspDiagnosticsSignError = { fg = gruvy.error }, -- used for "Error" diagnostic signs in sign column
+		LspDiagnosticsFloatingError = { fg = gruvy.error }, -- used for "Error" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextError = { fg = gruvy.error, style = "italic" }, -- Virtual text "Error"
+		LspDiagnosticsUnderlineError = { style = "undercurl", sp = gruvy.error }, -- used to underline "Error" diagnostics.
+		LspDiagnosticsDefaultWarning = { fg = gruvy.warn }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsSignWarning = { fg = gruvy.warn }, -- used for "Warning" diagnostic signs in sign column
+		LspDiagnosticsFloatingWarning = { fg = gruvy.warn }, -- used for "Warning" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextWarning = { fg = gruvy.warn, style = "italic" }, -- Virtual text "Warning"
+		LspDiagnosticsUnderlineWarning = { style = "undercurl", sp = gruvy.warn }, -- used to underline "Warning" diagnostics.
+		LspDiagnosticsDefaultInformation = { fg = gruvy.info }, -- used for "Information" diagnostic virtual text
+		LspDiagnosticsSignInformation = { fg = gruvy.info }, -- used for "Information" diagnostic signs in sign column
+		LspDiagnosticsFloatingInformation = { fg = gruvy.info }, -- used for "Information" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextInformation = { fg = gruvy.info, style = "italic" }, -- Virtual text "Information"
+		LspDiagnosticsUnderlineInformation = { style = "undercurl", sp = gruvy.info }, -- used to underline "Information" diagnostics.
+		LspDiagnosticsDefaultHint = { fg = gruvy.hint }, -- used for "Hint" diagnostic virtual text
+		LspDiagnosticsSignHint = { fg = gruvy.hint }, -- used for "Hint" diagnostic signs in sign column
+		LspDiagnosticsFloatingHint = { fg = gruvy.hint }, -- used for "Hint" diagnostic messages in the diagnostics float
+		LspDiagnosticsVirtualTextHint = { fg = gruvy.hint, style = "italic" }, -- Virtual text "Hint"
+		LspDiagnosticsUnderlineHint = { style = "undercurl", sp = gruvy.hint }, -- used to underline "Hint" diagnostics.
 		LspReferenceText = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui }, -- used for highlighting "text" references
 		LspReferenceRead = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui }, -- used for highlighting "read" references
 		LspReferenceWrite = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui }, -- used for highlighting "write" references
 
-		DiagnosticError = { link = "LspDiagnosticsDefaultError" },
+		DiagnosticError = { link = "LspDiagnosticsDefaultError" }, -- used for "Error" diagnostic virtual text
 		DiagnosticWarn = { link = "LspDiagnosticsDefaultWarning" },
 		DiagnosticInfo = { link = "LspDiagnosticsDefaultInformation" },
 		DiagnosticHint = { link = "LspDiagnosticsDefaultHint" },

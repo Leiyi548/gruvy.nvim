@@ -31,6 +31,13 @@ local gruvy = {
 	ts_keyword = "#81a2be",
 	-- ts_keyword = "#f96859",
 
+	-- lsp
+
+	error = "#DC143C",
+	warn = "#FFFF00",
+	hint = "#00BFFF",
+	info = "#00BFFF",
+
 	-- nord color
 	--16 colors
 	nord0_gui = "#2E3440", -- nord0 in palette
