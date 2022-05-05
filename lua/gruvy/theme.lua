@@ -401,9 +401,9 @@ theme.loadPlugins = function()
 		SneakScope = { bg = gruvy.nord1_gui },
 
 		-- Cmp vscode style
-		CmpItemAbbrMatchFuzzy = { bg = "none", fg = "#0195F7", gui = "bold", sp = "none" }, -- CmpItemAbbrMatchFuzzy xxx gui=italic guifg=#969896 guibg=none guisp=none
+		CmpItemAbbrMatchFuzzy = { bg = "none", fg = "#0195F7", style = "italic,bold" }, -- CmpItemAbbrMatchFuzzy xxx gui=italic guifg=#969896 guibg=none guisp=none
+		CmpItemAbbrMatch = { bg = "none", fg = "#0195F7", style = "italic,bold" }, -- CmpItemAbbrMatch xxx links to CmpItemAbbrMatchDefault
 		CmpItemAbbrMatchDefault = { fg = "#0195F7" }, -- CmpItemAbbrMatchDefault xxx guifg=#b4b7b4
-		CmpItemAbbrMatch = { CmpItemAbbrMatchDefault }, -- CmpItemAbbrMatch xxx links to CmpItemAbbrMatchDefault
 		CmpItemAbbrMatchFuzzyDefault = { fg = "#b4b7b4" }, -- CmpItemAbbrMatchFuzzyDefault xxx guifg=#b4b7b4
 		CmpItemKindDefault = { fg = "#d484ff" }, -- CmpItemKindDefault xxx guifg=#ffa500
 		CmpItemMenuDefault = { fg = "#b4b7b4" }, -- CmpItemMenuDefault xxx guifg=#b4b7b4
