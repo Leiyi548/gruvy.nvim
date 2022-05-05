@@ -33,7 +33,7 @@ local gruvy = {
 
 	-- lsp
 
-	error = "#DC143C",
+	error = "#f44747",
 	warn = "#FFFF00",
 	hint = "#00BFFF",
 	info = "#00BFFF",
