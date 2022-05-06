@@ -419,7 +419,7 @@ theme.loadPlugins = function()
 		CmpItemKindConstructor = { fg = "#E8AB53" },
 		CmpItemKindClass = { fg = "#E8AB53" },
 		CmpItemKindEnum = { fg = "#E8AB53" },
-		CmpItemKindEvent = { fg = "#B180D7" },
+		CmpItemKindEvent = { fg = "#E8AB53" },
 		CmpItemKindInterface = { fg = "#0195F7" },
 		CmpItemKindStruct = { fg = "#75BEFF" },
 		CmpItemKindVariable = { fg = "#75BEFF" },

@@ -45,6 +45,12 @@ local gruvy = {
 	-- cmp
 	-- cmp_abbrMatch = "#0195F7",
 	cmp_abbrMatch = "#f8fe7a",
+	cmp_kind_method = "#B180D7",
+	cmp_kind_function = "#B180D7",
+	cmp_kind_constructor = "#E8AB53",
+	cmp_kind_class = "#E8AB53",
+	cmp_kind_enum = "#E8AB53",
+	cmp_kind_event = "#E8AB53",
 
 	-- telescope
 	telescope_selection_bg = "#004b72",
