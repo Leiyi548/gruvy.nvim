@@ -212,10 +212,15 @@ theme.loadTreeSitter = function()
 		TSURI = { fg = gruvy.nord14_gui }, -- Any URI like a link or email.
 		-- TSAnnotation = { fg = gruvy.nord11_gui }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 
-		-- go
+		-- go language
 		goImport = { fg = "#8abeb7", style = "italic" },
 		goTSMethod = { fg = "#f8fe7a", style = "bold" },
 		goTSParameter = { fg = "#cc6666", style = "bold" },
+
+		-- python language
+		pythonInclude = { fg = "#8abeb7", style = "italic" },
+		pythonTSMethod = { fg = "#f8fe7a", style = "bold" },
+		pythonTSParameter = { fg = "#cc6666", style = "bold" },
 	}
 
 	treesitter.TSComment = { fg = gruvy.comment_grey }
