@@ -210,7 +210,7 @@ theme.loadTreeSitter = function()
 		TSTitle = { fg = gruvy.nord10_gui, bg = gruvy.none, style = "bold" }, -- Text that is part of a title.
 		TSLiteral = { fg = gruvy.nord4_gui }, -- Literal text.
 		TSURI = { fg = gruvy.nord14_gui }, -- Any URI like a link or email.
-		TSAnnotation = { fg = gruvy.nord11_gui }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
+		-- TSAnnotation = { fg = gruvy.nord11_gui }, -- For C++/Dart attributes, annotations that can be attached to the code to denote some kind of meta information.
 
 		-- go
 		goImport = { fg = "#8abeb7", style = "italic" },
@@ -323,33 +323,33 @@ theme.loadPlugins = function()
 		NeogitHunkHeader = { fg = gruvy.nord8_gui },
 		NeogitHunkHeaderHighlight = { fg = gruvy.nord8_gui, bg = gruvy.nord1_gui },
 		NeogitDiffContextHighlight = { bg = gruvy.nord1_gui },
-		NeogitDiffDeleteHighlight = { fg = gruvy.nord11_gui, style = "reverse" },
-		NeogitDiffAddHighlight = { fg = gruvy.nord14_gui, style = "reverse" },
+		NeogitDiffDeleteHighlight = { fg = gruvy.gitsign_delete, style = "reverse" },
+		NeogitDiffAddHighlight = { fg = gruvy.gitsign_add, style = "reverse" },
 
 		-- GitGutter
-		GitGutterAdd = { fg = gruvy.nord14_gui }, -- diff mode: Added line |diff.txt|
-		GitGutterChange = { fg = gruvy.nord15_gui }, -- diff mode: Changed line |diff.txt|
+		GitGutterAdd = { fg = gruvy.gitsign_add }, -- diff mode: Added line |diff.txt|
+		GitGutterChange = { fg = gruvy.gitsign_change }, -- diff mode: Changed line |diff.txt|
 		GitGutterDelete = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
 
 		-- GitSigns
-		GitSignsAdd = { fg = gruvy.nord14_gui }, -- diff mode: Added line |diff.txt|
-		GitSignsAddNr = { fg = gruvy.nord14_gui }, -- diff mode: Added line |diff.txt|
-		GitSignsAddLn = { fg = gruvy.nord14_gui }, -- diff mode: Added line |diff.txt|
-		GitSignsChange = { fg = gruvy.nord15_gui }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeNr = { fg = gruvy.nord15_gui }, -- diff mode: Changed line |diff.txt|
-		GitSignsChangeLn = { fg = gruvy.nord15_gui }, -- diff mode: Changed line |diff.txt|
-		GitSignsDelete = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
-		GitSignsDeleteNr = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
-		GitSignsDeleteLn = { fg = gruvy.nord11_gui }, -- diff mode: Deleted line |diff.txt|
+		GitSignsAdd = { fg = gruvy.gitsign_add }, -- diff mode: Added line |diff.txt|
+		GitSignsAddNr = { fg = gruvy.gitsign_add }, -- diff mode: Added line |diff.txt|
+		GitSignsAddLn = { fg = gruvy.gitsign_add }, -- diff mode: Added line |diff.txt|
+		GitSignsChange = { fg = gruvy.gitsign_change }, -- diff mode: Changed line |diff.txt|
+		GitSignsChangeNr = { fg = gruvy.gitsign_change }, -- diff mode: Changed line |diff.txt|
+		GitSignsChangeLn = { fg = gruvy.gitsign_change }, -- diff mode: Changed line |diff.txt|
+		GitSignsDelete = { fg = gruvy.gitsign_delete }, -- diff mode: Deleted line |diff.txt|
+		GitSignsDeleteNr = { fg = gruvy.gitsign_delete }, -- diff mode: Deleted line |diff.txt|
+		GitSignsDeleteLn = { fg = gruvy.gitsign_delete }, -- diff mode: Deleted line |diff.txt|
 		GitSignsCurrentLineBlame = { fg = gruvy.endofbuffer },
 
 		-- Telescope
-		TelescopePromptBorder = { fg = gruvy.yellow },
-		TelescopeResultsBorder = { fg = gruvy.nord9_gui },
-		TelescopePreviewBorder = { fg = gruvy.nord14_gui },
-		TelescopeSelectionCaret = { fg = gruvy.nord9_gui },
-		TelescopeSelection = { fg = gruvy.nord9_gui },
-		TelescopeMatching = { fg = gruvy.purple },
+		-- TelescopePromptBorder = { fg = gruvy.purple, style = "bold" },
+		-- TelescopeResultsBorder = { fg = gruvy.purple },
+		-- TelescopePreviewBorder = { fg = gruvy.purple },
+		TelescopeSelectionCaret = { fg = gruvy.telescope_selection_fg, bg = gruvy.telescope_selection_bg },
+		TelescopeSelection = { fg = gruvy.telescope_selection_fg, bg = gruvy.telescope_selection_bg },
+		TelescopeMatching = { fg = gruvy.cmp_abbrMatch, style = "bold,italic" },
 
 		-- NvimTree
 		NvimTreeRootFolder = { fg = gruvy.nord7_gui, style = "bold" },
@@ -404,9 +404,9 @@ theme.loadPlugins = function()
 		SneakScope = { bg = gruvy.nord1_gui },
 
 		-- Cmp vscode style
-		CmpItemAbbrMatchFuzzy = { bg = "none", fg = "#0195F7", style = "italic,bold" }, -- CmpItemAbbrMatchFuzzy xxx gui=italic guifg=#969896 guibg=none guisp=none
-		CmpItemAbbrMatch = { bg = "none", fg = "#0195F7", style = "italic,bold" }, -- CmpItemAbbrMatch xxx links to CmpItemAbbrMatchDefault
-		CmpItemAbbrMatchDefault = { fg = "#0195F7" }, -- CmpItemAbbrMatchDefault xxx guifg=#b4b7b4
+		CmpItemAbbrMatchFuzzy = { bg = "none", fg = gruvy.cmp_abbrMatch, style = "italic,bold" }, -- CmpItemAbbrMatchFuzzy xxx gui=italic guifg=#969896 guibg=none guisp=none
+		CmpItemAbbrMatch = { bg = "none", fg = gruvy.cmp_abbrMatch, style = "italic,bold" }, -- CmpItemAbbrMatch xxx links to CmpItemAbbrMatchDefault
+		CmpItemAbbrMatchDefault = { fg = gruvy.cmp_abbrMatch }, -- CmpItemAbbrMatchDefault xxx guifg=#b4b7b4
 		CmpItemAbbrMatchFuzzyDefault = { fg = "#b4b7b4" }, -- CmpItemAbbrMatchFuzzyDefault xxx guifg=#b4b7b4
 		CmpItemKindDefault = { fg = "#d484ff" }, -- CmpItemKindDefault xxx guifg=#ffa500
 		CmpItemMenuDefault = { fg = "#b4b7b4" }, -- CmpItemMenuDefault xxx guifg=#b4b7b4

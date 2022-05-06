@@ -32,11 +32,23 @@ local gruvy = {
 	-- ts_keyword = "#f96859",
 
 	-- lsp
-
 	error = "#f44747",
 	warn = "#FFFF00",
 	hint = "#00BFFF",
 	info = "#00BFFF",
+
+	-- gitsign
+	gitsign_change = "#007acc",
+	gitsign_add = "#6A9955",
+	gitsign_delete = "#F44747",
+
+	-- cmp
+	-- cmp_abbrMatch = "#0195F7",
+	cmp_abbrMatch = "#f8fe7a",
+
+	-- telescope
+	telescope_selection_bg = "#004b72",
+	telescope_selection_fg = "#e0e0dd",
 
 	-- nord color
 	--16 colors
