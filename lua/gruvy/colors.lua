@@ -56,6 +56,13 @@ local gruvy = {
 	telescope_selection_bg = "#004b72",
 	telescope_selection_fg = "#e0e0dd",
 
+	-- gui
+	cursor = "#FFCC00",
+	-- selection = "#404040",
+	-- title = "#EEFFFF",
+	selection = "#F8Fe7A",
+	title = "#282a2E",
+
 	-- nord color
 	--16 colors
 	nord0_gui = "#2E3440", -- nord0 in palette

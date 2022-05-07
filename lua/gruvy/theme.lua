@@ -70,8 +70,8 @@ theme.loadEditor = function()
 		FloatBorder = { fg = gruvy.float_border_fg, bg = gruvy.float_bg }, -- normal text and background color
 		ColorColumn = { fg = gruvy.none, bg = gruvy.colorcolumn }, --  used for the columns set with 'colorcolumn'
 		Conceal = { fg = gruvy.nord1_gui }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-		Cursor = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "reverse" }, -- the character under the cursor
-		CursorIM = { fg = gruvy.nord5_gui, bg = gruvy.none, style = "reverse" }, -- like Cursor, but used when in IME mode
+		Cursor = { fg = gruvy.nord4_gui, bg = gruvy.cursor }, -- the character under the cursor
+		CursorIM = { fg = gruvy.nord5_gui, bg = gruvy.none }, -- like Cursor, but used when in IME mode
 		Directory = { fg = gruvy.nord7_gui, bg = gruvy.none }, -- directory names (and other special names in listings)
 		DiffAdd = { fg = gruvy.nord14_gui, bg = gruvy.none, style = "reverse" }, -- diff mode: Added line
 		DiffChange = { fg = gruvy.nord13_gui, bg = gruvy.none, style = "reverse" }, --  diff mode: Changed line
@@ -81,7 +81,7 @@ theme.loadEditor = function()
 		ErrorMsg = { fg = "white", bg = "red" },
 		Folded = { fg = gruvy.nord3_gui_bright, bg = gruvy.none, style = "italic" },
 		FoldColumn = { fg = gruvy.nord7_gui },
-		IncSearch = { fg = gruvy.float_bg, bg = gruvy.yellow },
+		IncSearch = { fg = gruvy.title, bg = gruvy.selection, style = "underline" },
 		LineNr = { fg = "#969896", bg = "#282a2e" }, -- line number
 		CursorLineNr = { fg = "yellow", style = "bold" }, -- current line numbmer
 		MatchParen = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "bold" }, -- 突出显示的括号
@@ -95,7 +95,7 @@ theme.loadEditor = function()
 		Question = { fg = gruvy.nord14_gui },
 		QuickFixLine = { fg = "yellow", bg = gruvy.none, style = "reverse" }, -- highlight quickfix line
 		qfLineNr = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "reverse" },
-		Search = { fg = "#282a2e", bg = "#f8fe7a", style = "none" },
+		Search = { fg = gruvy.title, bg = gruvy.selection, style = "bold" },
 		SpecialKey = { fg = gruvy.nord9_gui },
 		SpellBad = { fg = gruvy.nord11_gui, bg = gruvy.none, style = "italic,undercurl" },
 		SpellCap = { fg = gruvy.nord7_gui, bg = gruvy.none, style = "italic,undercurl" },
@@ -357,21 +357,21 @@ theme.loadPlugins = function()
 		TelescopeMatching = { fg = gruvy.cmp_abbrMatch, style = "bold,italic" },
 
 		-- NvimTree
-		NvimTreeRootFolder = { fg = gruvy.nord7_gui, style = "bold" },
+		NvimTreeRootFolder = { fg = gruvy.yellow, style = "bold" },
 		NvimTreeGitDirty = { fg = gruvy.nord15_gui },
 		NvimTreeGitNew = { fg = gruvy.nord14_gui },
 		NvimTreeImageFile = { fg = gruvy.nord15_gui },
 		NvimTreeExecFile = { fg = gruvy.nord14_gui },
 		NvimTreeSpecialFile = { fg = gruvy.nord9_gui, style = "underline" },
 		NvimTreeFolderName = { fg = gruvy.nord10_gui },
-		NvimTreeEmptyFolderName = { fg = gruvy.nord1_gui },
+		NvimTreemptyFolderName = { fg = gruvy.nord1_gui },
 		NvimTreeFolderIcon = { fg = gruvy.nord4_gui },
 		NvimTreeIndentMarker = { fg = gruvy.nord1_gui },
 		NvimTreeEndOfBuffer = { fg = "#282c34" },
-		LspDiagnosticsError = { fg = gruvy.nord11_gui },
-		LspDiagnosticsWarning = { fg = gruvy.nord16_gui },
-		LspDiagnosticsInformation = { fg = gruvy.nord10_gui },
-		LspDiagnosticsHint = { fg = gruvy.nord9_gui },
+		LspDiagnosticsError = { fg = gruvy.error },
+		LspDiagnosticsWarning = { fg = gruvy.warn },
+		LspDiagnosticsInformation = { fg = gruvy.info },
+		LspDiagnosticsHint = { fg = gruvy.hint },
 
 		-- WhichKey
 		WhichKey = { fg = gruvy.nord4_gui, style = "bold" },
