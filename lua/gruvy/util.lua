@@ -26,7 +26,7 @@ end
 
 -- Change the background for the terminal, packer and qf windows
 util.contrast = function()
-	vim.cmd([[augroup nord]])
+	vim.cmd([[augroup gruvy]])
 	vim.cmd([[  autocmd!]])
 	vim.cmd([[  autocmd ColorScheme * lua require("gruvy.util").onColorScheme()]])
 	vim.cmd([[  autocmd TermOpen * setlocal winhighlight=Normal:NormalFloat,SignColumn:NormalFloat]])
@@ -76,11 +76,6 @@ function util.load()
 
 	-- load lsp highlights
 	util.loadColorSet(lsp)
-
-	-- if contrast is enabled, apply it to sidebars and floating windows
-	if vim.g.nord_contrast == true then
-		util.contrast()
-	end
 end
 
 return util
