@@ -18,9 +18,9 @@ end
 
 -- Only define nord if it's the active colorscheme
 function util.onColorScheme()
-	if vim.g.colors_name ~= "nord" then
-		vim.cmd([[autocmd! nord]])
-		vim.cmd([[augroup! nord]])
+	if vim.g.colors_name ~= "gruvy" then
+		vim.cmd([[autocmd! gruvy]])
+		vim.cmd([[augroup! gruvy]])
 	end
 end
 

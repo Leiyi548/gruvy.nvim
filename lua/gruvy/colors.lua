@@ -1,12 +1,9 @@
 local gruvy = {
 	-- gruvy color base tj
 	none = "NONE",
-	red = "#fc011a",
 	yellow = "#f8fe7a",
 	purple = "#b294bb",
 	grey = "#4e545c",
-	pink = "	#FFB6C1",
-	white = "#ffffff",
 	comment_grey = "#b0b1b0",
 	method_purple = "#B180D7",
 	deep_purple = "#5e0088",
@@ -56,12 +53,15 @@ local gruvy = {
 	telescope_selection_bg = "#004b72",
 	telescope_selection_fg = "#e0e0dd",
 
-	-- gui
+	-- editor
 	cursor = "#FFCC00",
 	-- selection = "#404040",
 	-- title = "#EEFFFF",
 	selection = "#F8Fe7A",
 	title = "#282a2E",
+	cursorline = "#192227",
+	bg = "#263238",
+	fg = "#B0BEC5",
 
 	-- nord color
 	--16 colors
@@ -85,21 +85,31 @@ local gruvy = {
 	nord14_gui = "#A3BE8C", -- nord14 in palette
 	nord15_gui = "#B48EAD", -- nord15 in palette
 	nord16_gui = "#dcdcaa",
+
+	-- Common colors material color
+
+	white = "#EEFFFF",
+	gray = "#717CB4",
+	black = "#000000",
+	red = "#F07178",
+	green = "#C3E88D",
+	blue = "#82AAFF",
+	paleblue = "#B0C9FF",
+	cyan = "#89DDFF",
+	orange = "#F78C6C",
+	pink = "#FF9CAC",
+
+	-- Dark colors
+	darkred = "#DC6068",
+	darkgreen = "#ABCF76",
+
+	darkyellow = "#E6B455",
+	darkblue = "#6E98EB",
+	darkcyan = "#71C6E7",
+	darkpurple = "#B480D6",
+	darkorange = "#E2795B",
 }
 
--- Enable contrast sidebars, floating windows and popup menus
-if vim.g.nord_contrast then
-	gruvy.sidebar = gruvy.nord1_gui
-	gruvy.float = gruvy.nord1_gui
-else
-	gruvy.sidebar = gruvy.nord0_gui
-	gruvy.float = gruvy.nord0_gui
-end
-
-if vim.g.nord_cursorline_transparent then
-	gruvy.cursorlinefg = gruvy.nord0_gui
-else
-	gruvy.cursorlinefg = gruvy.nord1_gui
-end
+local colors = {}
 
 return gruvy

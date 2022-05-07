@@ -85,6 +85,7 @@ theme.loadEditor = function()
 		LineNr = { fg = "#969896", bg = "#282a2e" }, -- line number
 		CursorLineNr = { fg = "yellow", style = "bold" }, -- current line numbmer
 		MatchParen = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "bold" }, -- 突出显示的括号
+		MatchParen = { fg = "#ffcb6b", bg = gruvy.none, style = "bold" }, -- 突出显示的括号
 		ModeMsg = { fg = gruvy.nord4_gui },
 		MoreMsg = { fg = gruvy.nord4_gui },
 		NonText = { fg = gruvy.nord1_gui },
@@ -115,6 +116,7 @@ theme.loadEditor = function()
 		WildMenu = { fg = gruvy.nord12_gui, bg = gruvy.none, style = "bold" },
 		CursorColumn = { fg = gruvy.none, bg = gruvy.cursorlinefg },
 		CursorLine = { fg = gruvy.none, bg = gruvy.cursorlinefg },
+		CursorLine = { fg = gruvy.none, bg = gruvy.cursorline },
 		ToolbarLine = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui },
 		ToolbarButton = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "bold" },
 		NormalMode = { fg = gruvy.nord4_gui, bg = gruvy.none, style = "reverse" },
@@ -276,6 +278,9 @@ theme.loadLSP = function()
 		LspReferenceText = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui }, -- used for highlighting "text" references
 		LspReferenceRead = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui }, -- used for highlighting "read" references
 		LspReferenceWrite = { fg = gruvy.nord4_gui, bg = gruvy.nord1_gui }, -- used for highlighting "write" references
+		LspReferenceText = { bg = gruvy.nord3_gui, style = "underline" }, -- used for highlighting "text" references
+		LspReferenceRead = { bg = gruvy.nord3_gui, style = "underline" }, -- used for highlighting "read" references
+		LpReferenceWrite = { bg = gruvy.nord3_gui, style = "underline" }, -- used for highlighting "write" references
 
 		DiagnosticError = { link = "LspDiagnosticsDefaultError" }, -- used for "Error" diagnostic virtual text
 		DiagnosticWarn = { link = "LspDiagnosticsDefaultWarning" },
