@@ -218,6 +218,9 @@ theme.loadTreeSitter = function()
 		goImport = { fg = "#8abeb7", style = "italic" },
 		goTSMethod = { fg = "#f8fe7a", style = "bold" },
 		goTSParameter = { fg = "#cc6666", style = "bold" },
+		goTSKeyword = { fg = "#cc6666", style = "none" },
+		goTSType = { style = "italic" },
+		goTSNameSpace = { fg = "#cc6666", style = "none" },
 
 		-- python language
 		pythonInclude = { fg = "#8abeb7", style = "italic" },
