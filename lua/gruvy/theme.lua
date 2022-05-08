@@ -84,7 +84,7 @@ theme.loadEditor = function()
 		IncSearch = { fg = gruvy.title, bg = gruvy.selection, style = "underline" },
 		LineNr = { fg = "#969896", bg = "#282a2e" }, -- line number
 		CursorLineNr = { fg = "yellow", style = "bold" }, -- current line numbmer
-		MatchParen = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "bold" }, -- 突出显示的括号
+		-- MatchParen = { fg = gruvy.nord15_gui, bg = gruvy.none, style = "bold" }, -- 突出显示的括号
 		MatchParen = { fg = "#ffcb6b", bg = gruvy.none, style = "bold" }, -- 突出显示的括号
 		ModeMsg = { fg = gruvy.nord4_gui },
 		MoreMsg = { fg = gruvy.nord4_gui },
